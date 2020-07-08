@@ -1,0 +1,38 @@
+runtime: php73
+
+handlers:
+    - url: /assets
+      static_dir: public/assets
+
+    -   url: /assets
+        static_dir: uploads
+
+runtime_config:
+    document_root: public
+#    document_root: public
+
+env_variables:
+    ## Put production environment variables here.
+    APP_KEY: base64:YCUz1My79ss9m2tgBcsZzMVYgj7IP5Ivm5PkyInkAYM=
+    APP_STORAGE: /tmp
+    VIEW_COMPILED_PATH: /tmp
+    SESSION_DRIVER: cookie
+
+
+    CACHE_DRIVER: database
+    ## Set these environment variables according to your CloudSQL configuration.
+    DB_DATABASE: ufurnitures
+    DB_USERNAME: ufurnitures
+    DB_PASSWORD: Lah0re420
+    DB_SOCKET: /cloudsql/ufurniture:us-central1:ufurnitures
+
+    ## To use Stackdriver logging in your Laravel application, copy
+    ## "app/Logging/CreateStackdriverLogger.php" and "config/logging.php"
+    ## into your Laravel application. Then uncomment the following line:
+    # LOG_CHANNEL: stackdriver
+
+
+beta_settings:
+    # for Cloud SQL, set this value to the Cloud SQL connection name,
+    # e.g. "project:region:cloudsql-instance"
+    cloud_sql_instances: ufurniture:us-central1:ufurnitures
